@@ -142,10 +142,10 @@ jobs:
           robocopy .\build32\src\virtual-output\RelWithDebInfo .\build-package\obs-plugins\32bit\ obs-virtualoutput.dll obs-virtualoutput.stripped.pdb
           robocopy .\build32\src\virtual-source\RelWithDebInfo .\build-package\bin\32bit\ obs-virtualsource.dll obs-virtualsource.stripped.pdb
           robocopy .\locale\ .\build-package\data\obs-plugins\obs-virtualoutput\locale\ *.ini
-          ren .\build-package\obs-plugins\64bit\obs-virtualoutput.stripped.pdb obs-virtualoutput.pdb
-          ren .\build-package\obs-plugins\32bit\obs-virtualoutput.stripped.pdb obs-virtualoutput.pdb
-          ren .\build-package\bin\64bit\obs-virtualsource.stripped.pdb obs-virtualsource.pdb
-          ren .\build-package\bin\32bit\obs-virtualsource.stripped.pdb obs-virtualsource.pdb
+          # ren .\build-package\obs-plugins\64bit\obs-virtualoutput.stripped.pdb obs-virtualoutput.pdb
+          # ren .\build-package\obs-plugins\32bit\obs-virtualoutput.stripped.pdb obs-virtualoutput.pdb
+          # ren .\build-package\bin\64bit\obs-virtualsource.stripped.pdb obs-virtualsource.pdb
+          # ren .\build-package\bin\32bit\obs-virtualsource.stripped.pdb obs-virtualsource.pdb
           mkdir release
           7z a ".\release\${{ env.WIN_FILENAME }}.zip" ".\build-package\*"
       - name: Install NSIS
