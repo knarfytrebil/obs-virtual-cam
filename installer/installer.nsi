@@ -142,6 +142,7 @@ Section Uninstall
 	Delete "$INSTDIR\obs-plugins\64bit\obs-virtualoutput.dll"
 	; Delete "$INSTDIR\obs-plugins\64bit\obs-virtualoutput.pdb"
 	Delete "$INSTDIR\bin\64bit\obs-virtualsource.dll"
+    ; commented out
 	; Delete "$INSTDIR\bin\64bit\obs-virtualsource.pdb"
 
 	; Remove data directory
