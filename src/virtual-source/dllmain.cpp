@@ -116,35 +116,35 @@ const AMOVIESETUP_FILTER AMSFilterA =
 CFactoryTemplate g_Templates[NUM_VIDEO_FILTERS + 1] =
 {
 	{
-		L"OBS-Camera",
+		L"S-Camera",
 		&CLSID_OBS_VirtualV,
 		CreateInstance,
 		NULL,
 		&AMSFilterV
 	},
 	{
-		L"OBS-Camera2",
+		L"S-Camera2",
 		&CLSID_OBS_VirtualV2,
 		CreateInstance2,
 		NULL,
 		&AMSFilterV2
 	},
 	{
-		L"OBS-Camera3",
+		L"S-Camera3",
 		&CLSID_OBS_VirtualV3,
 		CreateInstance3,
 		NULL,
 		&AMSFilterV3
 	},
 	{
-		L"OBS-Camera4",
+		L"S-Camera4",
 		&CLSID_OBS_VirtualV4,
 		CreateInstance4,
 		NULL,
 		&AMSFilterV4
 	},
 	{
-		L"OBS-Audio",
+		L"S-Audio",
 		&CLSID_OBS_VirtualA,
 		CVAudio::CreateInstance,
 		NULL,
