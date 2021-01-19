@@ -70,3 +70,17 @@ target_link_libraries(obs-virtualoutput
 	Qt5::Core
 	Qt5::Widgets)
 	
+if(MSVC)
+	foreach(t EXE SHARED MODULE)
+		set(CMAKE_${t}_LINKER_FLAGS "${CMAKE_${t}_LINKER_FLAGS} /OPT:REF /OPT:ICF /d2:-FH4-")
+		set(CMAKE_${t}_LINKER_FLAGS_DEBUG "${CMAKE_${t}_LINKER_FLAGS_DEBUG} /INCREMENTAL:NO /d2:-FH4-")
+		set(CMAKE_${t}_LINKER_FLAGS_RELWITHDEBINFO "${CMAKE_${t}_LINKER_FLAGS_RELWITHDEBINFO} /INCREMENTAL:NO /PDBSTRIPPED /d2:-FH4-")
+	endforeach()
+
+	foreach(var CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
+      CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELWITHDEBINFO)
+      if(${var} MATCHES "/MD")
+        string(REGEX REPLACE "/MD" "/MD /d2FH4-" ${var} "${${var}}")
+      endif()
+    endforeach()
+endif()
