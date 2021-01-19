@@ -8,7 +8,7 @@ set(virtualsource_SOURCES
 	virtual-cam.cpp
 	virtual-audio.cpp
 	clock.cpp
-	virtua-source.def
+	virtual-source.def
 	../queue/share_queue_read.cpp
 	)
 
@@ -49,7 +49,7 @@ target_link_libraries(obs-virtualsource
 	
 if(MSVC)
 	set(CMAKE_EXE_LINKER_FLAGS
-      "${CMAKE_EXE_LINKER_FLAGS} /DEF:virtua-source.def /NODEFAULTLIB")
+      "${CMAKE_EXE_LINKER_FLAGS} /DEF:virtual-source.def /NODEFAULTLIB")
 	
     foreach(var CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
       CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELWITHDEBINFO)
